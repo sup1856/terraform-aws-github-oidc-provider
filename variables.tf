@@ -48,3 +48,9 @@ variable "tags" {
   default     = {}
   description = "Tags"
 }
+
+variable "create_identity_provider" {
+  type        = bool
+  default     = true
+  description = "This switch allows you to create or not create the identity provider.  Only one can exist.  If you are creating multiple Github OIDC Federations, only one of the instantiations should create this or the Terraform run will fail."
+}
