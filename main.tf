@@ -1,4 +1,6 @@
 resource "aws_iam_openid_connect_provider" "this" {
+  count = var.create_identity_provider ? 1 : 0
+
   url = var.url
 
   client_id_list = var.client_id_list

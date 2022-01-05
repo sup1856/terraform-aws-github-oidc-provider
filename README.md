@@ -47,6 +47,7 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_policy_json"></a> [aws\_policy\_json](#input\_aws\_policy\_json) | The AWS policy in a json format | `string` | `"{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n      {\n        \"Effect\": \"Allow\",\n        \"Action\": \"*\",\n        \"Resource\": \"*\"\n      }\n    ]\n}\n"` | no |
 | <a name="input_client_id_list"></a> [client\_id\_list](#input\_client\_id\_list) | n/a | `list` | <pre>[<br>  "sts.amazonaws.com"<br>]</pre> | no |
+| <a name="input_create_identity_provider"></a> [create\_identity\_provider](#input\_create\_identity\_provider) | This switch allows you to create or not create the identity provider.  Only one can exist.  If you are creating multiple Github OIDC Federations, only one of the instantiations should create this or the Terraform run will fail. | `bool` | `true` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name for the various resources | `string` | `"github_oidc"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags | `map(any)` | `{}` | no |
 | <a name="input_thumbprint_list"></a> [thumbprint\_list](#input\_thumbprint\_list) | This is the thumbprint returned if you were to create an "identity provider" in AWS and gave it this url: https://token.actions.githubusercontent.com | `list` | <pre>[<br>  "a031c46782e6e6c662c2c87c76da9aa62ccabd8e"<br>]</pre> | no |
