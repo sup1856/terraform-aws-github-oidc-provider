@@ -8,7 +8,7 @@ variable "url" {
 }
 
 variable "client_id_list" {
-  type    = list(string)
+  type = list(string)
   default = [
     "sts.amazonaws.com"
   ]
@@ -17,7 +17,7 @@ variable "client_id_list" {
 # This is the thumbprint returned if you were to create an "identity provider" in AWS and gave
 # it this url: https://token.actions.githubusercontent.com
 variable "thumbprint_list" {
-  type    = list(string)
+  type = list(string)
   default = [
     "6938fd4d98bab03faadb97b34396831e3780aea1"
   ]
@@ -43,6 +43,12 @@ variable "validate_conditions" {
   description = "Conditions to validate"
   type        = set(string)
   default     = ["repo:octo-org/octo-repo:ref:refs/heads/octo-branch"]
+}
+
+variable "validate_wildcard_conditions" {
+  description = "Conditions to validate, that include wildcards"
+  type        = set(string)
+  default     = ["repo:octo-org/octo-repo:ref:refs/heads/feature/*"]
 }
 
 variable "tags" {

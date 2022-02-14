@@ -13,6 +13,7 @@ Doc: https://docs.github.com/en/actions/deployment/security-hardening-your-deplo
 This controls can help you do things like:
 * Only allow a certain branch
 * Only allow a certain repo/org
+* Allow certain branch patterns (*note*: the default values may clash)
 
 ## ARN to use in the Github Actions
 This module outputs an `arn` value.  This is the `arn` you should use in the Github Actions.
@@ -53,6 +54,7 @@ No requirements.
 | <a name="input_thumbprint_list"></a> [thumbprint\_list](#input\_thumbprint\_list) | This is the thumbprint returned if you were to create an "identity provider" in AWS and gave it this url: https://token.actions.githubusercontent.com | `list` | <pre>[<br>  "a031c46782e6e6c662c2c87c76da9aa62ccabd8e"<br>]</pre> | no |
 | <a name="input_url"></a> [url](#input\_url) | n/a | `string` | `"https://token.actions.githubusercontent.com"` | no |
 | <a name="input_validate_conditions"></a> [validate\_conditions](#input\_validate\_conditions) | Conditions to validate | `set(string)` | <pre>[<br>  "repo:octo-org/octo-repo:ref:refs/heads/octo-branch"<br>]</pre> | no |
+| <a name="input_validate_wildcard_conditions"></a> [validate\_wildcard\_conditions](#input\_validate\_wildcard\_conditions) | Conditions to validate that include wildcards | `set(string)` | <pre>[<br>  "repo:octo-org/octo-repo:ref:refs/heads/feature/*"<br>]</pre> | no |
 
 ## Outputs
 
