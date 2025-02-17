@@ -42,7 +42,7 @@ EOT
 variable "validate_conditions" {
   description = "Conditions to validate"
   type        = set(string)
-  default     = ["repo:octo-org/octo-repo:ref:refs/heads/octo-branch"]
+  default     = []
 }
 
 variable "validate_wildcard_conditions" {
